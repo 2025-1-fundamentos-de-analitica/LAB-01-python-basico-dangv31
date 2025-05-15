@@ -15,7 +15,7 @@ def pregunta_01():
 
     """
     count = 0
-    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+    with open("files/input/data.csv", "r", encoding="utf-8") as file:
         for line in file:
             column = line.split("\t")
             count += int(column[1])

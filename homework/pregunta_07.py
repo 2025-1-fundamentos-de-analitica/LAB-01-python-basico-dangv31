@@ -26,7 +26,7 @@ def pregunta_07():
 
     """
     nums = {}
-    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+    with open("files/input/data.csv", "r", encoding="utf-8") as file:
         for line in file:
             column = line.split("\t")
             nums[int(column[1])] = [column[0]] if int(column[1]) not in nums else nums[int(column[1])] + [column[0]]

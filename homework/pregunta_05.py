@@ -16,7 +16,7 @@ def pregunta_05():
 
     """
     maxMin = {}
-    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+    with open("files/input/data.csv", "r", encoding="utf-8") as file:
         for line in file:
             column = line.split("\t")
             if column[0] not in maxMin:

@@ -28,7 +28,7 @@ def pregunta_08():
 
     """
     nums = {}
-    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+    with open("files/input/data.csv", "r", encoding="utf-8") as file:
         for line in file:
             column = line.split("\t")
             if int(column[1]) not in nums:

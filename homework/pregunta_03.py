@@ -16,7 +16,7 @@ def pregunta_03():
 
     """
     count = {}
-    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+    with open("files/input/data.csv", "r", encoding="utf-8") as file:
         for line in file:
             column = line.split("\t")
             count[column[0]] = int(column[1]) if column[0] not in count else count[column[0]] + int(column[1])
