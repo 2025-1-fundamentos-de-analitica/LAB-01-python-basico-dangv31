@@ -15,3 +15,14 @@ def pregunta_12():
     {'A': 177, 'B': 187, 'C': 114, 'D': 136, 'E': 324}
 
     """
+    count = {}
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            column5 = column[4].split(",")
+            for val in column5:
+                _, value = val.split(":")
+                count[column[0]] = int(value) if column[0] not in count else count[column[0]] + int(value)
+    return dict(sorted(count.items()))
+if __name__ == "__main__":
+    print(pregunta_12())

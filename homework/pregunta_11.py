@@ -16,3 +16,13 @@ def pregunta_11():
 
 
     """
+    count = {}
+    with open("files\input\data.csv", "r", encoding = "utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            column4 = column[3].split(",")
+            for val in column4:
+                count[val] = int(column[1]) if val not in count else count[val] + int(column[1])
+    return dict(sorted(count.items()))
+if __name__ == "__main__":
+    print(pregunta_11())

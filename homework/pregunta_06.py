@@ -26,3 +26,19 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+    minMax = {}
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            column = column[4].split(",")
+            for val in column: 
+                key, value = val.split(":")
+                if key not in minMax:
+                    minMax[key] = [int(value), int(value)]
+                else:
+                    minMax[key][0] = min(minMax[key][0], int(value))
+                    minMax[key][1] = max(minMax[key][1], int(value))
+    return sorted([(key, value[0], value[1]) for key, value in minMax.items()])
+
+if __name__ == "__main__":
+    print(pregunta_06())

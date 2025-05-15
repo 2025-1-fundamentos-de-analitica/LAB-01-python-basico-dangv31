@@ -26,3 +26,13 @@ def pregunta_04():
      ('12', 3)]
 
     """
+    count = {}
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            month = column[2].split("-")[1]
+            count[month] = 1 if month not in count else count[month] + 1
+    return sorted(count.items())
+
+if __name__ == "__main__":
+    print(pregunta_04())

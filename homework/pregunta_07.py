@@ -25,3 +25,12 @@ def pregunta_07():
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
 
     """
+    nums = {}
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            nums[int(column[1])] = [column[0]] if int(column[1]) not in nums else nums[int(column[1])] + [column[0]]
+    return sorted([(key, value) for key, value in nums.items()])
+
+if __name__ == "__main__":
+    print(pregunta_07())

@@ -15,3 +15,11 @@ def pregunta_03():
     [('A', 53), ('B', 36), ('C', 27), ('D', 31), ('E', 67)]
 
     """
+    count = {}
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            count[column[0]] = int(column[1]) if column[0] not in count else count[column[0]] + int(column[1])
+    return sorted(count.items())
+if __name__ == "__main__": 
+    print(pregunta_03())

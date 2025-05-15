@@ -20,3 +20,13 @@ def pregunta_10():
 
 
     """
+    count = []
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            column4 = len(column[3].split(","))
+            column5 = len(column[4].split(","))
+            count.append((column[0], column4, column5))
+    return count
+if __name__ == "__main__":
+    print(pregunta_10())

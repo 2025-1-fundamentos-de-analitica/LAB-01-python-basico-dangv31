@@ -14,3 +14,12 @@ def pregunta_01():
     214
 
     """
+    count = 0
+    with open("files\input\data.csv", "r", encoding="utf-8") as file:
+        for line in file:
+            column = line.split("\t")
+            count += int(column[1])
+    return count
+
+if __name__ == "__main__":
+    print(pregunta_01())
